@@ -1,0 +1,214 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+}
+
+.content {
+  flex: 1;
+  width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* EXTRA CSS */
+
+/* =================================== */
+/* HOME */
+/* =================================== */
+
+.home-container {
+  background-image: url("./assets/img/pizza.jpeg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.home-title {
+  font-size: 2rem;
+}
+
+.home-description {
+  font-size: 1.1rem;
+}
+
+/* =================================== */
+/* CARDS */
+/* =================================== */
+
+.cards {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  width: 100%;
+}
+
+.my-card {
+  background-color: bisque;
+  width: 100%;
+  max-width: 30rem;
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: rgb(118, 89, 52);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.ingredients {
+  text-align: center;
+  font-weight: 500;
+}
+
+.card-ingredients {
+  color: rgb(92, 92, 92);
+  margin-top: 0rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card-price {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.ingredients {
+  margin-bottom: 0rem;
+  font-size: 1.1rem;
+}
+
+/* =================================== */
+/* NAVBAR */
+/* =================================== */
+
+.navbar-container {
+  display: flex;
+  background-color: #0f0f0f;
+  color: white;
+  padding: 10px 20px;
+  width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+}
+.navbar-title {
+  margin-right: 3rem;
+  font-size: 1.4rem;
+  padding: 0rem 0.2rem;
+}
+.cart {
+  margin-left: auto;
+}
+
+/* =================================== */
+/* BOTONES */
+/* =================================== */
+
+.button {
+  background-color: #0f0f0f;
+  border-color: white;
+  margin-right: 0.5rem;
+}
+
+.button-add {
+  color: white;
+  background-color: #242424;
+}
+.button-container {
+  background-color: rgb(59, 59, 59);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* =================================== */
+/* FOOTER */
+/* =================================== */
+footer {
+  margin-top: auto;
+  background-color: #0f0f0f;
+  color: rgb(105, 104, 104);
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
