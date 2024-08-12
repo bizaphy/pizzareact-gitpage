@@ -212,3 +212,25 @@ footer {
   border-top: 1px solid #ddd;
   width: 100%;
 }
+
+/* =================================== */
+/* FORMULARIO */
+/* =================================== */
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  background-color: WHITE;
+}
+
+.form-title-login,
+.form-title-register {
+  color: rgb(53, 0, 0);
+  padding: 1rem;
+}
+
+.error-msg {
+  color: red;
+}
