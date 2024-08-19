@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Carrito from "./components/Carrito";
 
 import "./App.css";
 
@@ -11,11 +12,11 @@ function App() {
     <div id="root">
       <div className="content">
         <Navbar />
-        {/* <Home /> */}
+        <Home />
         {/* <Register /> */}
-        <Login />
+        {/* <Login /> */}
       </div>
-
+      {/* <Carrito /> */}
       <div>
         <Footer />
       </div>

@@ -45,6 +45,10 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  padding: 1rem;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -83,6 +87,12 @@ button:focus-visible {
 /* HOME */
 /* =================================== */
 
+.section-title.available {
+  padding: 5rem 0rem 1rem 0rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 .home-container {
   background-image: url("./assets/img/pizza.jpeg");
   background-color: rgba(0, 0, 0, 0.7);
@@ -119,9 +129,9 @@ button:focus-visible {
 }
 
 .my-card {
-  background-color: bisque;
+  background-color: rgb(251, 233, 210);
   width: 100%;
-  max-width: 30rem;
+  max-width: 36rem;
   flex-grow: 1;
   margin: 0 1rem;
 }
@@ -157,6 +167,10 @@ button:focus-visible {
   font-size: 1.1rem;
 }
 
+.spacing {
+  height: 3rem;
+}
+
 /* =================================== */
 /* NAVBAR */
 /* =================================== */
@@ -173,7 +187,7 @@ button:focus-visible {
   font-size: 1.4rem;
   padding: 0rem 0.2rem;
 }
-.cart {
+.navbar-cart {
   margin-left: auto;
 }
 
@@ -233,4 +247,63 @@ footer {
 
 .error-msg {
   color: red;
+}
+
+/* =================================== */
+/* CARRITO */
+/* =================================== */
+.container-carrito {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.cart-item {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.button-cart-container {
+  margin-left: 1rem;
+  display: flex;
+  gap: 0.2rem;
+  padding: 0.5rem;
+}
+
+.button-cart {
+  padding: 0.5rem 1rem;
+}
+
+.decrease {
+  color: red;
+}
+
+.quantity-number {
+  font-size: 1.1rem;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.total {
+  padding: 1rem 0rem 1rem 0rem;
+  background-color: #0f0f0f;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.pagar {
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagar:hover {
+  background-color: green;
 }

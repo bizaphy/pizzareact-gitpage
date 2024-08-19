@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 
-const Home = () => {
+const Navbar = () => {
   const total = 25000;
   const formattedTotal = total.toLocaleString("es-ES");
   const token = false;
@@ -24,7 +24,7 @@ const Home = () => {
               </>
             )}
           </div>
-          <div className="cart">
+          <div className="navbar-cart">
             <Button className="button button--cart" variant="dark">
               🛒 Total: ${formattedTotal}
             </Button>
@@ -35,4 +35,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Navbar;

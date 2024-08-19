@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardPizza from "./CardPizza";
 import Header from "./Header";
-import Carrito from "./Carrito"; // Importamos el nuevo componente Carrito
 import { pizzas } from "../assets/pizzas";
 import { useState } from "react";
 
 const Home = () => {
-  const [cart, setCart] = useState([]); //Parte el State vacio (osea, el carro parte vacio)
+  const [cart, setCart] = useState([]);
+
   // Función para agregar pizza al carrito
   const addToCart = (pizza) => {
-    // Verifica si la pizza ya está en el carrito
     setCart((prevCart) => {
+      // Verifica si la pizza ya está en el carrito
       const existingPizza = prevCart.find((item) => item.id === pizza.id);
       //Esta parte examina si es necesario aumentar la cantidad, o agregar al carrito como tal
       if (existingPizza) {
@@ -19,12 +19,11 @@ const Home = () => {
           item.id === pizza.id ? { ...item, quantity: item.quantity + 1 } : item
         );
       } else {
-        // Si no existe, agrega la pizza con cantidad inicial = 1
         return [...prevCart, { ...pizza, quantity: 1 }];
       }
     });
   };
-  // FUNCION PARA CARRITO ---> AUMENTA ctd pizza selecc. en el carrito al clickear boton
+
   const increaseQuantity = (pizzaId) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -32,7 +31,8 @@ const Home = () => {
       )
     );
   };
-  // FUNCION PARA CARRITO ---> DISMINUYE ctd. pizza selecc. en el carrito al clickear boton
+
+  // Función dentro del carrito: DISMINUYE la cantidad de una pizza en el carrito
   const decreaseQuantity = (pizzaId) => {
     setCart((prevCart) =>
       prevCart
@@ -42,12 +42,11 @@ const Home = () => {
         .filter((item) => item.quantity > 0)
     );
   };
-  //FUNCION PARA CARRITO ---> Calculo Total (se activa al renderizar pag con setCart)
+  //Funcion que calcula el total del carrito. Esta se activa cada vez que se renderiza la pag (cdo aplica setCart)
   const calculateTotal = () => {
     let total = 0;
     cart.forEach((pizza) => {
       total += pizza.price * pizza.quantity;
-      total = total.toLocaleString("es-ES");
     });
     return total;
   };
@@ -56,14 +55,44 @@ const Home = () => {
     <>
       <Header />
       <div className="container-carrito">
-        <Carrito
-          cart={cart}
-          increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}
-          calculateTotal={calculateTotal}
-        />
-        {/* Esta parte generara cada card de pizza */}
-        <p className="section-title available">Pizzas Disponibles</p>
+        <h2 className="section-title">Carrito</h2>
+
+        <div className="cart-container">
+          {cart.length === 0 ? (
+            <p>No hay pizzas en el carrito.</p>
+          ) : (
+            <ul className="list-group">
+              {cart.map((pizza) => (
+                <li key={pizza.id} className="list-group-item">
+                  <img className="cart-item" src={pizza.img} alt={pizza.name} />
+                  <span>
+                    {pizza.name} - ${pizza.price} x{" "}
+                    <strong className="quantity-number">
+                      {pizza.quantity}
+                    </strong>
+                  </span>
+                  <div className="button-cart-container">
+                    <button
+                      className="button-cart increase"
+                      onClick={() => decreaseQuantity(pizza.id)}
+                    >
+                      -
+                    </button>
+                    <button
+                      className="button-cart decrease"
+                      onClick={() => increaseQuantity(pizza.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </li>
+              ))}
+              <div className="total">TOTAL: ${calculateTotal()}</div>
+            </ul>
+          )}
+        </div>
+
+        <h2 className="section-title available">Pizzas Disponibles</h2>
         <div className="cards">
           {pizzas.map((pizza) => (
             <CardPizza
@@ -71,8 +100,8 @@ const Home = () => {
               img={pizza.img}
               name={pizza.name}
               ingredients={pizza.ingredients.join(", ")}
-              price={`$${pizza.price.toLocaleString("es-ES")}`} //Se agrega el signo monetario sin destruir el codigo xD
-              onAddToCart={() => addToCart(pizza)} //// Enlazamos la función onAddtoCart y se llama a fx. addToCart
+              price={`$${pizza.price}`}
+              onAddToCart={() => addToCart(pizza)}
             />
           ))}
         </div>
