@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+
 const Pizza = () => {
   const [pizza, setPizza] = useState({});
   const getPizza = async () => {
@@ -20,6 +22,10 @@ const Pizza = () => {
         })}
       </ul>
       <p>{pizza.desc}</p>
+      <Button className="button-add" variant="light" onClick={onAddToCart}>
+        {" "}
+        🛒 Agregar
+      </Button>
     </div>
   );
 };
