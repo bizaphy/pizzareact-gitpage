@@ -22,7 +22,7 @@ const Pizza = () => {
         })}
       </ul>
       <p>{pizza.desc}</p>
-      <Button className="button-add" variant="light" onClick={onAddToCart}>
+      <Button className="button-add" variant="light">
         {" "}
         🛒 Agregar
       </Button>
