@@ -2,10 +2,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CardPizza from "./CardPizza";
 import Header from "./Header";
 import Carrito from "./Carrito"; // Importamos el nuevo componente Carrito
-import { pizzas } from "../assets/pizzas";
-import { useState } from "react";
+// import { pizzas } from "../assets/pizzas";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  //Reemplazar json interno por un json desde API
+  const [pizzas, setPizzas] = useState([]); //Parte el State vacio
+
+  const getPizzas = async () => {
+    const respuesta = await fetch("http://localhost:5000/api/pizzas");
+    const pizzas = await respuesta.json();
+
+    setPizzas(pizzas);
+  };
+
+  useEffect(() => {
+    getPizzas();
+  }, []);
+
   const [cart, setCart] = useState([]); //Parte el State vacio (osea, el carro parte vacio)
   // Función para agregar pizza al carrito
   const addToCart = (pizza) => {

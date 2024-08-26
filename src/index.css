@@ -307,3 +307,39 @@ footer {
 .pagar:hover {
   background-color: green;
 }
+
+/* ///NEW CARD */
+.newCard {
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newCard-img {
+  /* Ajusta el tamaño de la imagen */
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.newCard p {
+  /* Ajusta el margen y el padding para los párrafos */
+  margin: 10px 0;
+  padding: 0;
+}
+
+.newCard ul {
+  padding: 0;
+  margin: 0;
+}
+
+.newCard li {
+  margin: 5px 0;
+}

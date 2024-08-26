@@ -1,0 +1,27 @@
+import { useEffect, useState } from "react";
+const Pizza = () => {
+  const [pizza, setPizza] = useState({});
+  const getPizza = async () => {
+    const response = await fetch("http://localhost:5000/api/pizzas/p001");
+    const pizza = await response.json();
+    setPizza(pizza);
+  };
+  useEffect(() => {
+    getPizza();
+  }, []);
+  return (
+    <div id={pizza.id} className="newCard">
+      <img src={pizza.img} alt={pizza.name} className="newCard-img" />
+      <p>{pizza.name}</p>
+      <p>${pizza.price?.toLocaleString("es-ES")}</p>
+      <ul>
+        {pizza.ingredients?.map((ingredient) => {
+          return <li key={ingredient}> {ingredient} </li>;
+        })}
+      </ul>
+      <p>{pizza.desc}</p>
+    </div>
+  );
+};
+
+export default Pizza;
