@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import CardPizza from "./CardPizza";
-import Header from "./Header";
+import CardPizza from "../components/CardPizza";
+import Header from "../components/Header";
 import Carrito from "./Carrito"; // Importamos el nuevo componente Carrito
 // import { pizzas } from "../assets/pizzas";
 import { useEffect, useState } from "react";

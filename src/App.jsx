@@ -1,10 +1,14 @@
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Carrito from "./components/Carrito";
-import Pizza from "./components/Pizza";
+import NotFound from "./components/NotFound";
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Carrito from "./pages/Carrito";
+import Pizza from "./pages/Pizza";
+import CardPizza from "./components/CardPizza";
 
 import "./App.css";
 
@@ -13,15 +17,17 @@ function App() {
     <div id="root">
       <div className="content">
         <Navbar />
-        {/* <Home /> */}
-        {/* <Register /> */}
-        {/* <Login /> */}
-        <Pizza />
+        <Routes>
+          <Route path="/pizzareact-gitpage/" element={<Home />} />
+          <Route path="/pizzareact-gitpage/cart" element={<Carrito />} />
+          <Route path="/pizzareact-gitpage/profile" element={<Profile />} />
+          <Route path="/pizzareact-gitpage/register" element={<Register />} />
+          <Route path="/pizzareact-gitpage/login" element={<Login />} />
+          <Route path="/pizzareact-gitpage/pizza" element={<Pizza />} />
+          <Route path="/pizzareact-gitpage/*" element={<NotFound />} />
+        </Routes>
       </div>
-      {/* <Carrito /> */}
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

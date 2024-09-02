@@ -341,3 +341,61 @@ footer {
 .newCard li {
   margin: 5px 0;
 }
+
+/* =================================== */
+/* PROFILE */
+/* =================================== */
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.user-info {
+  background-color: #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.user-info p {
+  margin-bottom: 10px;
+}
+
+/* =================================== */
+/* PROFILE */
+/* =================================== */
+
+.error404-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error404-msj {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* =================================== */
+/* CART */
+/* =================================== */
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
